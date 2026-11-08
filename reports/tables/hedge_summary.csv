@@ -1,0 +1,14 @@
+,value
+hedge_ratio_full_sample,0.8976
+hedge_ratio_se,0.0269
+r2_variance_removed_in_sample,0.8895
+hedge_ratio_2015_2021,0.9522
+litres_hedged_12m,450000.0000
+contracts_exact,2.5406
+contracts_used,3.0000
+oos_strips,45.0000
+oos_sd_budget_miss_unhedged_cad,51128.7155
+oos_sd_budget_miss_hedged_cad,16767.9962
+oos_variance_reduction,0.8924
+oos_worst_miss_unhedged_cad,94783.4071
+oos_worst_miss_hedged_cad,35016.4793

@@ -1,0 +1,5 @@
+scenario,days,call_days,total_calls_cad,largest_call_cad,peak_cumulative_outflow_cad,net_futures_pnl_cad
+2022 spike and collapse: fleet long 3 contracts from 1 Feb 2022,228,92,1488694,60418,118022,-5516
+2026 spike: fuel supplier short 3 contracts from 2 Jan 2026 (the other side of a fixed-price deal),210,97,1453122,54673,361338,-127091
+"Synthetic spike (+50% in 30 days, -40% in 40 days): fleet long 3 contracts",70,31,268613,18724,85428,-47628
+Synthetic spike: refiner short 300 contracts,70,23,21490460,1693211,22544108,4762800

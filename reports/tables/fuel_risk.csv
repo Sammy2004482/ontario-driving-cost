@@ -1,0 +1,7 @@
+model,exposure,litres_5y,mean,p5,p50,p95,var95,es95
+mean_reverting,"My car: Corolla LE, 16,000 km/yr",5360.00,7735.99,6412.46,7697.58,9213.50,1477.51,1934.10
+mean_reverting,"My car: Corolla Hybrid, 16,000 km/yr",3760.00,5426.74,4498.29,5399.79,6463.20,1036.46,1356.75
+mean_reverting,"Delivery fleet: 50 gasoline vans, 60,000 km/yr each",2250000.00,3247384.66,2691797.39,3231258.36,3867608.33,620223.67,811887.07
+random_walk,"My car: Corolla LE, 16,000 km/yr",5360.00,10844.18,6002.93,10159.71,18054.37,7210.20,10311.23
+random_walk,"My car: Corolla Hybrid, 16,000 km/yr",3760.00,7607.11,4211.01,7126.96,12665.01,5057.90,7233.25
+random_walk,"Delivery fleet: 50 gasoline vans, 60,000 km/yr each",2250000.00,4552126.52,2519885.85,4264804.38,7578794.30,3026667.77,4328406.17
