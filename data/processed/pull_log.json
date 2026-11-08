@@ -1,0 +1,104 @@
+{
+  "boc_fx_daily.csv": {
+    "source": [
+      "https://www.bankofcanada.ca/valet/observations/FXUSDCAD/json?start_date=2014-01-01",
+      "https://www.bankofcanada.ca/valet/observations/IEXE0101/json?start_date=2014-01-01"
+    ],
+    "pulled_at_utc": "2026-11-08T15:49:46Z",
+    "rows": 3207,
+    "first": "2014-01-02",
+    "last": "2026-11-06",
+    "sha256": "8c8fcdf3ac586221256f770a64c287976f0929294b7b2f5de1aa391347d06e8c"
+  },
+  "boc_monthly.csv": {
+    "source": [
+      "https://www.bankofcanada.ca/valet/observations/V39079/json?start_date=2014-01-01",
+      "https://www.bankofcanada.ca/valet/observations/FXUSDCAD/json?start_date=2014-01-01",
+      "https://www.bankofcanada.ca/valet/observations/IEXE0101/json?start_date=2014-01-01"
+    ],
+    "pulled_at_utc": "2026-11-08T15:49:46Z",
+    "rows": 155,
+    "first": "2014-01",
+    "last": "2026-11",
+    "sha256": "5b8402cd7540ac190487387c38e2d1ffd4d0b6c7011a0432a4c1499aa6529ae0"
+  },
+  "cpi_basket_weights.csv": {
+    "source": "https://www150.statcan.gc.ca/n1/tbl/csv/18100007-eng.zip",
+    "pulled_at_utc": "2026-11-08T15:49:44Z",
+    "rows": 10,
+    "first": "2011",
+    "last": "2025",
+    "sha256": "725fbb5ddea2c687f7d835ff7605e365553551f46caed4a34a4fc28e4dfe0549"
+  },
+  "cpi_monthly.csv": {
+    "source": "https://www150.statcan.gc.ca/n1/tbl/csv/18100004-eng.zip",
+    "pulled_at_utc": "2026-11-08T15:49:44Z",
+    "rows": 306,
+    "first": "2014-01",
+    "last": "2026-09",
+    "sha256": "3159ba4f75200c66c43192a9c8af76269f15951b16c9fa85682b124da181d6d9"
+  },
+  "eia_daily.csv": {
+    "source": [
+      "https://www.eia.gov/dnav/pet/hist_xls/RWTCm.xls",
+      "https://www.eia.gov/dnav/pet/hist_xls/RWTCd.xls",
+      "https://www.eia.gov/dnav/pet/hist_xls/EER_EPMRU_PF4_Y35NY_DPGm.xls",
+      "https://www.eia.gov/dnav/pet/hist_xls/EER_EPMRU_PF4_Y35NY_DPGd.xls"
+    ],
+    "pulled_at_utc": "2026-11-08T15:49:46Z",
+    "rows": 3216,
+    "first": "2014-01-02",
+    "last": "2026-11-03",
+    "sha256": "62e2a5af85a715dffa5f52455a9350ce256633dd2a940daa05f6cf45561850c8"
+  },
+  "eia_monthly.csv": {
+    "source": [
+      "https://www.eia.gov/dnav/pet/hist_xls/RWTCm.xls",
+      "https://www.eia.gov/dnav/pet/hist_xls/RWTCd.xls",
+      "https://www.eia.gov/dnav/pet/hist_xls/EER_EPMRU_PF4_Y35NY_DPGm.xls",
+      "https://www.eia.gov/dnav/pet/hist_xls/EER_EPMRU_PF4_Y35NY_DPGd.xls"
+    ],
+    "pulled_at_utc": "2026-11-08T15:49:46Z",
+    "rows": 154,
+    "first": "2014-01",
+    "last": "2026-10",
+    "sha256": "fa1299e764580b5b0285c538ac95f70ffe9ed05fdcc241f69dc3e98feb27e095"
+  },
+  "fremtpl2_freq.csv.gz": {
+    "source": "https://www.openml.org/data/v1/download/20649148/freMTPL2freq.arff",
+    "pulled_at_utc": "2026-11-08T15:49:54Z",
+    "rows": 678013,
+    "first": "1",
+    "last": "6114330",
+    "sha256": "9280a3d183f454ac050dc799d6934ec577cdc6cf0896b6796e9f9fef8c294ecf"
+  },
+  "fremtpl2_sev.csv.gz": {
+    "source": "https://www.openml.org/data/v1/download/20649149/freMTPL2sev.arff",
+    "pulled_at_utc": "2026-11-08T15:49:54Z",
+    "rows": 26639,
+    "first": "139",
+    "last": "6113971",
+    "sha256": "15e68d9a9f050179b3b4e191c55c1e7c90b820cea4f6abcf00a69207bcde80c9"
+  },
+  "gas_prices_monthly.csv": {
+    "source": "https://www150.statcan.gc.ca/n1/tbl/csv/18100001-eng.zip",
+    "pulled_at_utc": "2026-11-08T15:49:43Z",
+    "rows": 1377,
+    "first": "2014-01",
+    "last": "2026-09",
+    "sha256": "03dea3c645f7e224c3011c5526d2b81dca5bd14e95a376b520534aac3a71588a"
+  },
+  "nrcan_fuel_ratings.csv": {
+    "source": [
+      "https://open.canada.ca/data/dataset/98f1a129-f628-4ce4-b24d-6f16bf24dd64/resource/c98b9dc8-b23f-4cd8-8b19-e892da1e4688/download/my2015-2024-fuel-consumption-ratings.csv",
+      "https://open.canada.ca/data/dataset/98f1a129-f628-4ce4-b24d-6f16bf24dd64/resource/d589f2bc-9a85-4f65-be2f-20f17debfcb1/download/my2025-fuel-consumption-ratings.csv",
+      "https://open.canada.ca/data/dataset/98f1a129-f628-4ce4-b24d-6f16bf24dd64/resource/9df1b18d-d036-4783-a61c-99f1f75b3ac5/download/my2026-fuel-consumption-ratings.csv",
+      "https://open.canada.ca/data/dataset/98f1a129-f628-4ce4-b24d-6f16bf24dd64/resource/026e45b4-eb63-451f-b34f-d9308ea3a3d9/download/my2012-2026-battery-electric-vehicles.csv"
+    ],
+    "pulled_at_utc": "2026-11-08T15:49:46Z",
+    "rows": 12604,
+    "first": "2015",
+    "last": "2026",
+    "sha256": "b63fc953e6964c1e2a9389936f886688ada0db5da8f531d9705bf417bf705c24"
+  }
+}
