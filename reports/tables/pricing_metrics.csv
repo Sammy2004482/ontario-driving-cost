@@ -1,0 +1,10 @@
+,value
+policies,678013.0000
+exposure_years,358360.1055
+claims,36056.0000
+claim_frequency,0.1006
+claim_cap_eur,34376.9643
+large_loss_load_eur_per_year,42.3346
+test_poisson_deviance_explained,0.0537
+test_gini_pure_premium,0.0081
+mean_severity_eur,1691.8082

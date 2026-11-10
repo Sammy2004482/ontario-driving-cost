@@ -6,10 +6,13 @@
 - Phase 3: drivecost/passthrough.py and drivecost/inflation.py, with charts in reports/figures.
 - Phase 4: drivecost/risk.py. The base case is mean-reverting AR(1) with block-bootstrapped shocks; the random walk is the stress case. Fan chart covers 2027-2031.
 - Phase 5: drivecost/hedge.py (hedge ratio, out-of-sample backtest, margin calls) and drivecost/credit_stress.py.
-- Phase 6: drivecost/pricing.py is written. It was being re-run after fixing a memory blow-up (refit GLMs are now freed). Check that `python -m drivecost.pricing` finishes.
+- Phase 6: drivecost/pricing.py runs on the full data (about 1.5 min, about 5 GB RAM). Results are in reports/tables/pricing_*. Two things still need fixing:
+  - The test Gini of 0.008 is implausibly low, almost certainly a bug in `gini()` (check the ordering and normalisation). The Poisson deviance explained on the test set, 5.4%, is in line with the literature.
+  - Vehicle age band "0" has a frequency relativity of about 4.6x. This is a known freMTPL2 artifact (very short-exposure new-car policies). The example premiums use VehAge 0, so they are inflated. Switch the examples to "1-4", and consider merging band 0 into 1-4.
+  - Factor ranking (deviance): vehicle age, bonus-malus, driver age, power, region, area, brand, fuel. A 22-year-old new driver costs about 2.8x an experienced 45-year-old (to recheck after the band fix).
 
 ## To do
-1. Confirm pricing.py runs, then look at reports/figures/pricing_factors.png.
+1. Fix the pricing Gini and the vehicle-age-0 band, then look at reports/figures/pricing_factors.png.
 2. Tests for passthrough (recover known coefficients from simulated data), risk (VaR/ES on a known distribution), hedge (h* on synthetic data), credit_stress, inflation and pricing (small sample).
 3. Notebooks: notebooks/03_passthrough.ipynb, executed with nbconvert ("coefficients and chart in a notebook").
 4. data/data_dictionary.md
