@@ -1,0 +1,12 @@
+pandas>=2.2
+numpy>=2.0
+statsmodels>=0.14
+matplotlib>=3.9
+requests>=2.32
+openpyxl>=3.1
+xlrd>=2.0          # EIA .xls downloads
+streamlit>=1.40
+pytest>=8.0
+nbconvert>=7.16    # executes the notebook
+ipykernel>=6.29
+# Optional system tools: LibreOffice (Excel recalculation test), pandoc + Chromium (memo PDF)

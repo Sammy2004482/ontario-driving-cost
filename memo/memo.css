@@ -1,0 +1,8 @@
+
+@page { size: Letter; margin: 0.45in 0.5in; }
+body { font-family: 'DejaVu Sans', Arial, sans-serif; font-size: 9.2pt; line-height: 1.36; color: #111; }
+h1 { font-size: 14pt; margin: 0 0 2px 0; color: #1f4e79; }
+p { margin: 0 0 6px 0; text-align: justify; }
+p:has(img) { display: flex; gap: 2%; margin: 4px 0 6px 0; }
+img { height: auto; }
+em { color: #444; }

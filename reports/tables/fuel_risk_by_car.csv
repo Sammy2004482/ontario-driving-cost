@@ -1,0 +1,7 @@
+vehicle,model,mean,p5,p50,p95,var95,es95
+Toyota Corolla LE (gas),mean_reverting,7735.99,6412.46,7697.58,9213.50,1477.51,1934.10
+Toyota Corolla LE (gas),random_walk,10844.18,6002.93,10159.71,18054.37,7210.20,10311.23
+Toyota Corolla Hybrid,mean_reverting,5426.74,4498.29,5399.79,6463.20,1036.46,1356.75
+Toyota Corolla Hybrid,random_walk,7607.11,4211.01,7126.96,12665.01,5057.90,7233.25
+Hyundai Kona Electric,mean_reverting,2562.05,2562.05,2562.05,2562.05,0.00,0.00
+Hyundai Kona Electric,random_walk,2562.05,2562.05,2562.05,2562.05,0.00,0.00

@@ -1,5 +1,5 @@
 profile,claim_frequency,claim_severity_eur,pure_premium_eur,vs_experienced
-"New grad, 22, new licence record (BM 100)",0.8818,2126.6402,1917.5827,2.8239
-"Same driver after 5 clean years (BM ~77), age 27",0.4311,1943.1176,880.0768,1.2960
-"Experienced driver, 45, best record (BM 50)",0.3673,1733.5936,679.0557,1.0000
-"Driver 19, new record (BM 100)",1.2665,2505.2947,3215.1898,4.7348
+"New grad, 22, new licence record (BM 100)",0.2674,2006.5887,578.9898,2.5784
+"Same driver after 5 clean years (BM ~77), age 27",0.1308,1833.4262,282.0782,1.2562
+"Experienced driver, 45, best record (BM 50)",0.1114,1635.7301,224.5503,1.0000
+"Driver 19, new record (BM 100)",0.3841,2363.8676,950.3367,4.2322

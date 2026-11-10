@@ -136,7 +136,10 @@ def factor_importance(f: pd.DataFrame, freq_model, rel_freq: pd.DataFrame, rel_s
 
 
 def gini(actual: np.ndarray, predicted: np.ndarray, weight: np.ndarray) -> float:
-    """Normalised Gini of losses ordered by predicted pure premium (0 = no lift, 1 = perfect)."""
+    """Normalised Gini: rank policies by predicted loss *per year of exposure*, highest first, and
+    compare the concentration of actual losses with a perfect ranking (0 = no lift, 1 = perfect).
+
+    actual: losses per policy; predicted: predicted rate per exposure-year; weight: exposure."""
     def _g(order):
         a, w = actual[order], weight[order]
         cum_w = np.cumsum(w) / w.sum()
@@ -146,7 +149,9 @@ def gini(actual: np.ndarray, predicted: np.ndarray, weight: np.ndarray) -> float
 
 
 def example_premiums(freq_model, sev_model, large_loss_load: float) -> pd.DataFrame:
-    base = {"VehAgeBand": "0", "VehPowerBand": "6", "VehBrand": "B12", "VehGas": "Regular",
+    # VehAge 0 is avoided on purpose: in freMTPL2 brand-new cars carry very short exposures and an
+    # implausible 3.4x claim rate (a known data artifact), so the examples use a 1-4 year-old car.
+    base = {"VehAgeBand": "1-4", "VehPowerBand": "6", "VehBrand": "B12", "VehGas": "Regular",
             "AreaBand": "D", "Region": "R24", "Exposure": 1.0}
     profiles = {
         "New grad, 22, new licence record (BM 100)": {"DrivAgeBand": "21-25", "BonusMalusBand": "91-100"},
@@ -185,7 +190,7 @@ def plot(importance: pd.DataFrame, rel_freq: pd.DataFrame, rel_sev: pd.DataFrame
         ax.bar(x + 0.2, pp, 0.4, color="#1f4e79", label="pure premium (freq x sev)")
         ax.axhline(1, color="black", lw=0.6)
         ax.set_xticks(x, order, rotation=45, fontsize=8)
-        ax.set_title(f"{LABELS[factor]} relativities (base = {BASE_LEVELS[factor]})", fontsize=10)
+        ax.set_title(f"{LABELS[factor].split(' (')[0]} relativities (base = {BASE_LEVELS[factor]})", fontsize=10)
         ax.legend(frameon=False, fontsize=8)
         ax.spines[["top", "right"]].set_visible(False)
     fig.tight_layout()
@@ -216,13 +221,13 @@ def main(sample_frac: float | None = None):
     dev_model = pois_dev(test.ClaimNb.values, mu.values)
     dev_null = pois_dev(test.ClaimNb.values, null_rate * test.Exposure.values)
     test_losses = s[s.IDpol.isin(test_ids)].groupby("IDpol").ClaimCapped.sum().reindex(test.IDpol).fillna(0).values
-    pp = mu.values * predict_severity(sm_, test)
+    pp_rate = mu.values / test.Exposure.values * predict_severity(sm_, test)   # pure premium per year
     metrics = {
         "policies": len(f), "exposure_years": f.Exposure.sum(), "claims": int(f.ClaimNb.sum()),
         "claim_frequency": f.ClaimNb.sum() / f.Exposure.sum(), "claim_cap_eur": f.attrs["claim_cap"],
         "large_loss_load_eur_per_year": load_per_year,
         "test_poisson_deviance_explained": 1 - dev_model / dev_null,
-        "test_gini_pure_premium": gini(test_losses, pp, test.Exposure.values),
+        "test_gini_pure_premium": gini(test_losses, pp_rate, test.Exposure.values),
         "mean_severity_eur": s.ClaimCapped.mean(),
     }
 

@@ -1,0 +1,9 @@
+input,label,gap_low,gap_high,swing
+discount_rate,Discount rate (0% to 7%),14177.64,15199.95,1022.31
+elec_per_kwh,Electricity ($0.10 to $0.30/kWh),13782.74,16500.87,2718.13
+km_per_year,Km per year (10k to 25k),15932.18,12936.93,2995.25
+gas_cpl,"Gas price, year 1 (120 to 220 c/L)",16004.55,12475.48,3529.07
+rebate,EV rebate ($0 to $5k),14734.08,10599.63,4134.45
+ev_insurance,Kona insurance ($2.9k to $3.9k/yr),12295.17,17172.99,4877.82
+ev_resale,Kona resale after 5 yrs (28% to 48%),17765.19,10187.43,7577.76
+ev_price,Kona price ($38k to $50k),8945.85,18868.53,9922.68

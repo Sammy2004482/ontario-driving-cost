@@ -140,7 +140,7 @@ def fan_chart(pump: pd.DataFrame, stress: pd.DataFrame | None = None, path=None,
     hist = monthly_panel().pump_cpl.loc[hist_start:]
     q = pump.quantile([0.05, 0.25, 0.5, 0.75, 0.95]).T
     q.index = pd.PeriodIndex(q.index, freq="M").to_timestamp()
-    fig, ax = plt.subplots(figsize=(8, 4.2))
+    fig, ax = plt.subplots(figsize=(6.6, 4.0))
     ax.plot(pd.to_datetime(hist.index), hist.values, color="black", lw=1.5, label="Toronto regular, actual")
     ax.fill_between(q.index, q[0.05], q[0.95], color="#2e75b6", alpha=0.18, label="5th to 95th percentile")
     ax.fill_between(q.index, q[0.25], q[0.75], color="#2e75b6", alpha=0.35, label="25th to 75th percentile")
@@ -148,13 +148,19 @@ def fan_chart(pump: pd.DataFrame, stress: pd.DataFrame | None = None, path=None,
     if stress is not None:
         s95 = stress.quantile(0.95)
         s95.index = pd.PeriodIndex(s95.index, freq="M").to_timestamp()
-        ax.plot(s95.index, s95.values, color="#c00000", ls="--", lw=1.1,
+        cap = max(hist.max(), q[0.95].max()) * 1.45
+        ax.plot(s95.index, s95.clip(upper=cap).values, color="#c00000", ls="--", lw=1.1,
                 label="95th percentile, random-walk stress case")
+        if s95.max() > cap:
+            ax.annotate(f"random walk: {s95.iloc[-1]:.0f} by {s95.index[-1].year}", (s95.index[-1], cap),
+                        xytext=(-4, -10), textcoords="offset points", ha="right", fontsize=8, color="#c00000")
+        ax.set_ylim(0, cap * 1.03)
     for p_ in (0.05, 0.5, 0.95):
         ax.annotate(f"{q[p_].iloc[-1]:.0f}", (q.index[-1], q[p_].iloc[-1]), xytext=(4, 0),
                     textcoords="offset points", fontsize=8, va="center")
     ax.axvline(pd.Timestamp(SIM_START), color="grey", lw=0.6, ls=":")
-    ax.set_ylim(0, None)
+    if stress is None:
+        ax.set_ylim(0, None)
     ax.set_ylabel("cents per litre, incl. taxes")
     ax.set_title("Gasoline price fan chart, Toronto regular, 2027 to 2031")
     ax.legend(frameon=False, fontsize=8, loc="upper left")
